@@ -1,0 +1,13 @@
+asgiref==3.7.2
+async-generator==1.10
+Django==4.2.4
+exceptiongroup==1.1.1
+h11==0.14.0
+outcome==1.2.0
+selenium==4.10.0
+sqlparse==0.4.4
+trio==0.22.0
+trio-websocket==0.10.3
+typing_extensions==4.7.1
+tzdata==2023.3
+wsproto==1.2.0
