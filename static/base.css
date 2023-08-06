@@ -1,0 +1,33 @@
+.mureojwo_header{
+    text-align: center; 
+    margin: 2rem 0;
+}
+
+
+.mureojwo_logo{
+    font-family: 'Do Hyeon', sans-serif; 
+    font-size: 3rem; 
+    font-weight: bold;
+}
+
+
+.footer_base{
+    text-align: center; 
+    margin-top: 2rem;
+}
+
+
+.footer_font_size{
+    font-size: 0.8rem;
+}
+
+
+.footer_logo{
+    font-family: 'Do Hyeon', sans-serif; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+}
+
+.footer_logo_margin{
+    margin-top: 1.5rem;
+}
