@@ -3,10 +3,27 @@
 
 {% block content %}
 
-<div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem; font-size: 2rem;">
-    <h1>
-        testing
+<div style="border-radius: 1rem; margin: 2rem; font-size: 2rem; text-align: center;">
+    <h1 style="font-family:'Do Hyeon', sans-serif;">
+        TEST LIST
     </h1>
+    <form action="{% url 'accountapp:test' %}" method="post">
+        {% csrf_token %} <!--장고에서 제공하는 보안기능들 중 하나 // 장고에서 POST를 이용해 서버에 요청을 보낼때는 csrf_token을 form안에 항상 명시해줘야 한다 -->
+        <div>
+            <input type="text" name="test_input">
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="POST">
+        </div>
+    </form>
+
+    {% if new_text_list %}
+        {% for new_text in new_text_list %}
+    <h4>
+        {{ new_text.text }}
+    </h4>
+        {% endfor %}
+    {% endif %}
 </div>
 
 {% endblock %}

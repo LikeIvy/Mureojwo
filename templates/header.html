@@ -6,6 +6,17 @@
         <span>어종</span>
         <span>포인트</span>
         <span>커뮤니티</span>
-        <span>로그인</span>
+        {% if not user.is_authenticated %}
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <span>로그인</span>
+        </a>
+        {% else %}
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <span>마이페이지</span>
+        </a>
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+            <span>로그아웃</span>
+        </a>
+        {% endif %}
     </div>
 </div>

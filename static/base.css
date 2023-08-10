@@ -31,3 +31,15 @@
 .footer_logo_margin{
     margin-top: 1.5rem;
 }
+
+.account_create_base{
+    text-align: center; 
+    max-width: 500px; 
+    margin: 4rem auto;
+}
+
+.account_login_base{
+    text-align: center; 
+    max-width: 500px; 
+    margin: 4rem auto;
+}
