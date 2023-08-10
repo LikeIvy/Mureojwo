@@ -11,7 +11,14 @@
         <h2>
             {{ target_user.username }}
         </h2>
+
+        {% if target_user == user %}
+        <a href="{% url 'accountapp:update' pk=user.pk %}">
+            <p>
+                회원정보 변경
+            </p>
+        </a>
+        {% endif %}
     </div>
 </div>
-
 {% endblock %}
