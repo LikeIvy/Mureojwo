@@ -4,18 +4,32 @@
 {% block content %}
 
 <div>
-    <div>
+    <div class="account_detail_base">
         <p>
             {{ target_user.date_joined }}
         </p>
+        {% if target_user.profile %}
         <h2>
-            {{ target_user.username }}
+            {{ target_user.profile.nickname }}
         </h2>
+        {% else %}
+        <a href="{% url 'profileapp:create' %}">
+            <h2>
+                프로필 생성
+            </h2>
+        </a>
+        {% endif %}
+
 
         {% if target_user == user %}
         <a href="{% url 'accountapp:update' pk=user.pk %}">
             <p>
                 회원정보 변경
+            </p>
+        </a>
+        <a href="{% url 'accountapp:delete' pk=user.pk %}">
+            <p>
+                회원탈퇴
             </p>
         </a>
         {% endif %}
