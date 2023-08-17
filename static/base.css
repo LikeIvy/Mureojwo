@@ -1,6 +1,12 @@
+a{
+    text-decoration:none;
+    color: black;
+}
+
+
 .mureojwo_header{
     text-align: center; 
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 
@@ -8,6 +14,8 @@
     font-family: 'Do Hyeon', sans-serif; 
     font-size: 3rem; 
     font-weight: bold;
+    margin-bottom: 2rem;
+    color: dodgerblue;
 }
 
 
@@ -74,3 +82,32 @@
     max-width: 500px; 
     margin: 4rem auto;
 }
+
+.profile_update_base{
+    text-align: center; 
+    max-width: 500px; 
+    margin: 4rem auto;
+}
+
+.profile_message{
+    margin-bottom: 2rem;
+}
+
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+
+.base_line_color{
+    color: dodgerblue;
+    height: 2px;
+}
+
+.nav_margin {
+    margin: 0 0.5rem;
+}
+
+

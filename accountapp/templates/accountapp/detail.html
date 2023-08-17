@@ -5,22 +5,33 @@
 
 <div>
     <div class="account_detail_base">
-        <p>
-            {{ target_user.date_joined }}
-        </p>
+        
         {% if target_user.profile %}
+        <img style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem;" src="{{ target_user.profile.image.url }}" alt="">
         <h2>
             {{ target_user.profile.nickname }}
+            {% if target_user == user %}
+            <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                프로필 수정
+            </a>
+            {% endif %}
         </h2>
         {% else %}
+        <h5 class="profile_message">
+            {{ target_user.profile.message }}
+        </h5>   
+        {% if target_user == user %}
         <a href="{% url 'profileapp:create' %}">
             <h2>
-                프로필 생성
+                프로필 생성     
             </h2>
         </a>
+        {% else %}
+        <h2>
+            프로필을 설정해 주세요
+        </h2>
         {% endif %}
-
-
+        {% endif %}
         {% if target_user == user %}
         <a href="{% url 'accountapp:update' pk=user.pk %}">
             <p>

@@ -4,11 +4,11 @@
 
 {% block content%}
 
-<div class="account_create_base">
+<div class="profile_update_base">
     <div>
-        <h4>회원가입</h4>
+        <h4>프로필 업데이트</h4>
     </div>
-    <form action="{% url 'accountapp:create' %}" method="post">
+    <form action="{% url 'profileapp:update' pk=target_profile.pk %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-primary rounded-pill col-6 mt-3">
