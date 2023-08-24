@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
+{% load socialaccount %}
 
 {% block content %}
 <div class="account_login_base">
@@ -12,6 +13,13 @@
             {% bootstrap_form form %}
             <input type="submit" class="btn btn-primary rounded-pill col-6 mt-5">
         </form>
+    </div>
+    <div>
+        <a href="{% provider_login_url 'kakao' %}" class="btn btn-warning rounded-pill col-6 mt-3">카카오톡 로그인</a>
+    </div>
+    <hr>
+    <div>
+        <a href="{% url 'accountapp:create' %}">아직 계정이 없으신가요? <strong>가입하기</strong></a>
     </div>
 </div>
 {% endblock %}

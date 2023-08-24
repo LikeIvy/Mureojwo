@@ -61,7 +61,25 @@ INSTALLED_APPS = [
     'bootstrap4',
     'articleapp',
     'commentapp',
+    'likeapp',
+
+    # allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # providers
+    'allauth.socialaccount.providers.kakao',
 ]
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -152,8 +170,11 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:test')
+SITE_ID = 3
+LOGIN_REDIRECT_URL = reverse_lazy('articleapp:list')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
+ACCOUNT_LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')  # 로그아웃 후 리다이렉트 할 페이지
+ACCOUNT_LOGOUT_ON_GET = True # 로그아웃 버튼 클릭 시 자동 로그아웃
 
 
 MEDIA_URL = "/media/"

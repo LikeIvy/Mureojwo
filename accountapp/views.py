@@ -35,7 +35,7 @@ def test(request):
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:test') # reverse와 reverse_lazy의 차이점? => reverse_lazy는 class형 view에서 사용한다(class에서는 reverse를 사용할 수 없음)
+    success_url = reverse_lazy('accountapp:login') # reverse와 reverse_lazy의 차이점? => reverse_lazy는 class형 view에서 사용한다(class에서는 reverse를 사용할 수 없음)
     template_name = 'accountapp/create.html'
 
 
